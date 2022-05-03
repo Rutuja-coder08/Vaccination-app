@@ -27,7 +27,7 @@ mutation onCreateAdministerPatientMutation (
     }
   }
 `
-const AddAdministerPatient = () => {
+const AddAdministerPatient : React.FC<{onAddData : () => void }>= (props) =>{
 
 // const createAdministerPatientHandler = (event : React.FormEvent) => {}
 
@@ -91,15 +91,13 @@ if(error) return <h4> Something went wrong </h4>
 
     return(
         <div className="row">
-            <div className="col-12">
-            <h2> Administer Vaccination for Patients </h2>
-            <br/>
+            <div className="col-12 card">
+            <div className="card-header" >
+            <h2 className="text-center"> Administer Vaccination for Patients </h2>
             </div>
-
-            <div className="col-12">
                 <form>
 
-                    <label htmlFor="nameofthepatient">Name of the Patient</label>
+                    <label htmlFor="nameofthepatient" className="font-weight-bold">Name of the Patient</label>
                     <select  name="nameofthepatient"  className="form-control">
                         {data.patients.map((patient:any) =>(
                             <option key={patient.id} value={patient.patientname}>
@@ -109,7 +107,7 @@ if(error) return <h4> Something went wrong </h4>
                     </select>
                        
 
-                    <label htmlFor="dateofbirth">Date of Birth</label>
+                    <label htmlFor="dateofbirth" className="font-weight-bold">Date of Birth</label>
                     <select  name="dateofbirth"  className="form-control">
                         {data.patients.map((patient:any) =>(
                             <option key={patient.id} value={patient.dateofbirth}>
@@ -118,7 +116,7 @@ if(error) return <h4> Something went wrong </h4>
                         ))}
                     </select>
 
-                    <label htmlFor="vaccination">Vaccination</label>
+                    <label htmlFor="vaccination" className="font-weight-bold">Vaccination</label>
                     <input type="text" name="vaccination" className="form-control" value={administerPatientState.vaccination} onChange={vaccinationChangeHandler}/>
 
                     {/* <select name="vaccination" className="form-control" onChange = { () => vaccinationChangeHandler}>         
@@ -126,13 +124,13 @@ if(error) return <h4> Something went wrong </h4>
                         <option value="2nddose">2nd Dose</option>
                     </select> */}
 
-                    <label htmlFor="dateadministered">Date Administered</label>
+                    <label htmlFor="dateadministered" className="font-weight-bold">Date Administered</label>
                     <input type="date" name="dateadministered" className="form-control" value={administerPatientState.dateadministered} max="2022-05-02" min="2020-01-01" onChange={dateadministeredChangeHandler}/>
 
-                    <label htmlFor="brandname">Brand Name</label>
+                    <label htmlFor="brandname" className="font-weight-bold">Brand Name</label>
                     <input type="text" name="brandname" className="form-control" value={administerPatientState.brandname} onChange={brandnameChangeHandler}/>
 
-                    <label htmlFor="givenat">Given At</label>
+                    <label htmlFor="givenat" className="font-weight-bold">Given At</label>
                     <input type="text" name="givenat" className="form-control" value={administerPatientState.givenat} onChange={givenatChangeHandler}/>
 
                     <br/>
@@ -142,7 +140,7 @@ if(error) return <h4> Something went wrong </h4>
                 </form>
 
                 <br/>
-                {data && <p>Administered Patient Successfully</p>}
+                {data && <p></p>}
 
             </div>
         </div>

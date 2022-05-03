@@ -27,7 +27,7 @@ mutation onCreatePatientMutation (
   }
 `
 
-const AddPatient = () => {
+const AddPatient : React.FC<{onAddData : () => void }>= (props) =>{
 
     const [patientState, setPatientState] = useState<{
         patientname : string,
@@ -111,20 +111,23 @@ const AddPatient = () => {
     return(
         <div className="row">
 
-            <div className="col-12">
-            <h2 className="offset-3"> Add New Patients </h2>
+            {/* <div className="col-12 card">
+            <h2 className="offset-3 card-header"> Add New Patients </h2>
             <br/>
-            </div>
+            </div> */}
 
-            <div className="col-12">
+            <div className="col-12 card">
+                <div className="card-header">
+                <h2 className="text-center"> Add New Patients </h2>
+                </div>
                 <form>
-                    <label htmlFor="patientname">Patient Name</label>
+                    <label htmlFor="patientname" className="font-weight-bold">Patient Name</label>
                     <input type="text" name="patientname" className="form-control" value={patientState.patientname} onChange={patientnameChangeHandler}/>
 
-                    <label htmlFor="dateofbirth">Date of Birth</label>
+                    <label htmlFor="dateofbirth" className="font-weight-bold">Date of Birth</label>
                     <input type="date" name="dateofbirth" className="form-control" value={patientState.dateofbirth} onChange={dateofbirthChangeHandler}/>
 
-                    <label htmlFor="gender">Gender</label>
+                    <label htmlFor="gender" className="font-weight-bold">Gender</label>
                     <input type="text" name="gender" className="form-control" value={patientState.gender} onChange={genderChangeHandler}/>
 
                     {/* <select name="gender" className="form-control" value={patientState.gender} onChange = { () => genderChangeHandler}>         
@@ -132,10 +135,10 @@ const AddPatient = () => {
                         <option value={patientState.gender}>Female</option>
                     </select> */}
 
-                    <label htmlFor="placeofbirth">Place of Birth</label>
+                    <label htmlFor="placeofbirth" className="font-weight-bold">Place of Birth</label>
                     <input type="text" name="placeofbirth" className="form-control" value={patientState.placeofbirth} onChange={placeofbirthChangeHandler}/>
 
-                    <label htmlFor="bloodgroup">Blood Group</label>
+                    <label htmlFor="bloodgroup" className="font-weight-bold">Blood Group</label>
                     <input type="text" name="bloodgroup" className="form-control" value={patientState.bloodgroup} onChange={bloodgroupChangeHandler}/>
 
                     {/* <select name="bloodgroup" className="form-control" value={patientState.bloodgroup} onChange = { () => bloodgroupChangeHandler}>         
@@ -149,10 +152,10 @@ const AddPatient = () => {
                         <option value="O-">O-</option>
                     </select> */}
 
-                    <label htmlFor="height">Height</label>
+                    <label htmlFor="height" className="font-weight-bold">Height</label>
                     <input type="text" name="height" className="form-control" value={patientState.height} onChange={heightChangeHandler}/>
 
-                    <label htmlFor="weight">Weight</label>
+                    <label htmlFor="weight" className="font-weight-bold">Weight</label>
                     <input type="text" name="weight" className="form-control" value={patientState.weight} onChange={weightChangeHandler}/>
 
                     <br/>
