@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 const HomePage = () => {
 
     return (
-        <div>
-            <p className="display-4 text-center">Welcome to Vaccination App</p>
-            <div className="row">
-                <div className="col-4">
+        <div className="card">
+            <p className="display-4 text-center card-header">Welcome to Vaccination App</p>
+            <div className="row ">
+                <div className="col-4 card-body">
                     <ul>
                         <li>
-                            <Link to="/patients">Add New Patients</Link>
+                            <Link className="font-weight-bold" to="/patients">Add New Patients</Link>
                         </li>
                         <li>
-                            <Link to="/administerPatients">Administer Vaccination</Link>
+                            <Link className="font-weight-bold" to="/administerPatients">Administer Vaccination</Link>
                         </li>
                     </ul>
                 </div>
