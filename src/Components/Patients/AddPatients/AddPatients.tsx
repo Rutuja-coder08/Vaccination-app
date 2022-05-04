@@ -36,6 +36,7 @@ const CREATE_PATIENT_MUTATION = gql`
 `;
 
 const AddPatient: React.FC<{ onAddData: () => void }> = (props) => {
+  
   const [patientState, setPatientState] = useState<{
     patientname: string;
     dateofbirth: string;

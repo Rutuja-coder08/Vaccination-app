@@ -18,6 +18,7 @@ const AdministerPatientCard = () => {
 
            <div>
             <table>
+               
                 <tr>
                  <th>Name</th>
                  <th>DOB</th>
