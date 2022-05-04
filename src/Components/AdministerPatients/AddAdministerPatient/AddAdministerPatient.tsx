@@ -73,7 +73,12 @@ const AddAdministerPatient: React.FC<{ onAddData: () => void }> = (props) => {
                 brandname: administerPatientState.brandname,
                 givenat: administerPatientState.givenat
             }
-        })
+        }).then(res =>{
+            history.replace("/")
+            alert("Patients details Validated and saved in Database!")
+          }).catch(err=>{
+            alert("Enter Data")
+          })
     }
 
     const nameofthepatientChangeHandler: React.ChangeEventHandler<HTMLSelectElement> = event => {
@@ -117,7 +122,7 @@ const AddAdministerPatient: React.FC<{ onAddData: () => void }> = (props) => {
                 </div>
                 <form>
 
-                    <label htmlFor="nameofthepatient" className="font-weight-bold">Name of the Patient</label>
+                    <label htmlFor="nameofthepatient" className="font-weight-bold"> Name of the Patient</label>
                     <select name="nameofthepatient" className="form-control" onChange={nameofthepatientChangeHandler}>
                         {data.patients.map((patient: any) => (
                             <option key={patient.id} value={patient.patientname}>

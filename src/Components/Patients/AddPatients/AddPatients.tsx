@@ -82,8 +82,13 @@ const AddPatient: React.FC<{ onAddData: () => void }> = (props) => {
         height: patientState.height,
         weight: patientState.weight,
       },
-    });
-  };
+    }).then(res =>{
+      history.replace("/")
+      alert("Patient's details is saved successfully!")
+    }).catch(err=>{
+      alert("Enter Data")
+    })
+ };
 
   const patientnameChangeHandler: React.ChangeEventHandler<HTMLInputElement> = (
     event
@@ -145,7 +150,7 @@ const AddPatient: React.FC<{ onAddData: () => void }> = (props) => {
         </div>
         <form>
           <label htmlFor="patientname" className="font-weight-bold">
-            Patient Name
+            * Patient Name 
           </label>
           <input
             type="text"
@@ -156,7 +161,7 @@ const AddPatient: React.FC<{ onAddData: () => void }> = (props) => {
           />
 
           <label htmlFor="dateofbirth" className="font-weight-bold">
-            Date of Birth
+            * Date of Birth
           </label>
           <input
             type="date"
