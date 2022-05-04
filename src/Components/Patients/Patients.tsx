@@ -1,6 +1,6 @@
 import { gql, useQuery } from '@apollo/client'
 import { IPatient } from '../../model/patient.model'
-import AddPatient from './AddPatients/AddPatient';
+import AddPatient from './AddPatients/AddPatients';
 import { useState } from 'react';
 const FETCH_PATIENTS=gql`
 query{
@@ -20,10 +20,12 @@ const Patients = () => {
   return (
     <div className="row">
         <div className="col-6 offset-3">
-        <button className='btn btn-primary btn-block' onClick={() => setShowForm(!showForm)}>
-                        {showForm ? 'Close Form' : 'Add Form'}
-                  </button>
-                  <hr/>
+            <div className='text-center'>
+        <button className='btn btn-primary' onClick={() => setShowForm(!showForm)}>
+            {showForm ? 'Close Form' : 'Add Form'}
+        </button>
+        </div>
+        <hr/>
         {showForm && <AddPatient onAddData={onAddData} />}
         </div>
     </div>

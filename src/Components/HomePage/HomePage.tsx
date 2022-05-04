@@ -1,23 +1,35 @@
 import { Link } from "react-router-dom";
-
+import Caption from "./Caption";
 const HomePage = () => {
 
     return (
+       <div className="container">
         <div className="card">
-            <p className="display-4 text-center card-header">Welcome to Vaccination App</p>
+            <h1 className="display-4 text-center card-header font-weight-bold">Welcome to Vaccination App</h1>
             <div className="row ">
                 <div className="col-4 card-body">
-                    <ul>
+                    <ul className="offset-2">
                         <li>
-                            <Link className="font-weight-bold" to="/patients">Add New Patients</Link>
+                            <Link  to="/patients"><h5>Add New Patients</h5></Link>
                         </li>
+                        <hr/>
+                        <hr/>
+                        <hr/>
+                        <hr/>
                         <li>
-                            <Link className="font-weight-bold" to="/administerPatients">Administer Vaccination</Link>
+                            <Link  to="/administerPatients"><h5>Administer Vaccination</h5></Link>
                         </li>
                     </ul>
                 </div>
+                <div className="col-4">
+            <Caption/>
+        </div>
             </div>
         </div>
+        <hr/>
+      </div>
+        
+        
     )
 
 }
