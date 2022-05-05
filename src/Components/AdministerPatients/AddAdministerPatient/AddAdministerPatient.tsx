@@ -1,6 +1,5 @@
 import { useMutation, gql, useQuery } from "@apollo/client";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const FETCH_PATIENT = gql`
@@ -33,11 +32,8 @@ mutation onCreateAdministerPatientMutation (
   }
 `
 
-
-
 const AddAdministerPatient: React.FC<{ onAddData: () => void }> = (props) => {
-   
-    // const createAdministerPatientHandler = (event : React.FormEvent) => {}
+     useEffect(()=>{ })
 
     const [administerPatientState, setAdministerPatientState] = useState<{
         nameofthepatient: string,
@@ -78,12 +74,13 @@ const AddAdministerPatient: React.FC<{ onAddData: () => void }> = (props) => {
                 givenat: administerPatientState.givenat
             }
         }).then(res =>{
-            history.replace("/")
+            history.replace("/administerPatients")
             alert("Patients details Validated and saved in Database!")
+            window.location.reload();
           }).catch(err=>{
             alert("Enter Data")
           });
-          window.location.reload();
+         
     }
 
     const nameofthepatientChangeHandler: React.ChangeEventHandler<HTMLSelectElement> = event => {

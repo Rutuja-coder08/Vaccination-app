@@ -85,6 +85,7 @@ const AddPatient: React.FC<{ onAddData: () => void }> = (props) => {
     }).then(res =>{
       history.replace("/")
       alert("Patient's details is saved successfully!")
+        window.location.reload();
     }).catch(err=>{
       alert("Enter Data")
     })

@@ -1,7 +1,7 @@
 const Caption = () => {
   return (
     <div className="row">
-        <div className="offset-11">
+        <div className="offset-4">
           <h1 style={{ color: "red" }}>EDUCATED.</h1>
           <h1 style={{ color: "yellow" }}>MOTIVATED.</h1>
           <h1 style={{ color: "blue" }}>VACCINATED.</h1>

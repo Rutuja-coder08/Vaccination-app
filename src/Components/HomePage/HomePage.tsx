@@ -4,8 +4,8 @@ const HomePage = () => {
 
     return (
        <div className="container">
-        <div className="card">
-            <h1 className="display-4 text-center card-header font-weight-bold">Welcome to Vaccination</h1>
+       <div className="card">
+            <h1 className="display-4 text-center card-header">Welcome to Vaccination</h1>
             <div className="row">
                 <div className="col-4 card-body">
                     <ul className="offset-2">
@@ -22,8 +22,8 @@ const HomePage = () => {
                     </ul>
                 </div>
                 <div className="col-4">
-            <Caption/>
-        </div>
+                 <Caption/>
+                </div>
             </div>
         </div>
         <hr/>
