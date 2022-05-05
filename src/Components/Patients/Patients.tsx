@@ -12,7 +12,7 @@ query{
 const Patients = () => {
     const {error, loading, data} = useQuery(FETCH_PATIENTS)
     const [showForm, setShowForm] = useState<boolean>(false);
-    if(error) return <h4> Something went wrong </h4>
+    if(error) return <h4> Something went wrong {error?.message} </h4>
     if(loading) return <h4> Loading... </h4>
     const onAddData = () => {
         setShowForm(false)

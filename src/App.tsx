@@ -6,6 +6,11 @@ import { Fragment } from 'react';
 import Header from './Components/Header/Header';
 import HomePage from './Components/HomePage/HomePage';
 
+// const client = new ApolloClient({
+//     uri : "https://vac-node-graphql.herokuapp.com/",
+//     cache : new InMemoryCache()
+//   })
+
 const client = new ApolloClient({
   uri : "http://localhost:9090/gq",
   cache : new InMemoryCache()
@@ -29,7 +34,7 @@ function App() {
       </ApolloProvider>
     </Route>
 
-    <Route path="/administerPatients">
+    <Route path="/administerPatients" exact>
       <ApolloProvider client={client}>
         <AdministerPatients />
       </ApolloProvider>

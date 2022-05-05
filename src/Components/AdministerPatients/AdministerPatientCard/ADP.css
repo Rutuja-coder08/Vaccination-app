@@ -1,18 +1,4 @@
-.table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    text-align: center;
-  }
-.th,td{
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-    text-align: center;
-  }
-.td,th{
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-    text-align: center;
-  }
+.card{
+  margin: 5px 10px;
+}
+

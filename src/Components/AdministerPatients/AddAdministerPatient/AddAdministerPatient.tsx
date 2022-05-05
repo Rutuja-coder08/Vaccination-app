@@ -1,4 +1,5 @@
 import { useMutation, gql, useQuery } from "@apollo/client";
+import { useEffect } from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
@@ -31,8 +32,11 @@ mutation onCreateAdministerPatientMutation (
     }
   }
 `
-const AddAdministerPatient: React.FC<{ onAddData: () => void }> = (props) => {
 
+
+
+const AddAdministerPatient: React.FC<{ onAddData: () => void }> = (props) => {
+   
     // const createAdministerPatientHandler = (event : React.FormEvent) => {}
 
     const [administerPatientState, setAdministerPatientState] = useState<{
@@ -78,7 +82,8 @@ const AddAdministerPatient: React.FC<{ onAddData: () => void }> = (props) => {
             alert("Patients details Validated and saved in Database!")
           }).catch(err=>{
             alert("Enter Data")
-          })
+          });
+          window.location.reload();
     }
 
     const nameofthepatientChangeHandler: React.ChangeEventHandler<HTMLSelectElement> = event => {
@@ -107,6 +112,7 @@ const AddAdministerPatient: React.FC<{ onAddData: () => void }> = (props) => {
 
     const history = useHistory()
     const { data } = useQuery(FETCH_PATIENT)
+
     if (error) return <h4> Something went wrong </h4>
     // if(loading) return <h4> Loading... </h4>
 
@@ -124,7 +130,7 @@ const AddAdministerPatient: React.FC<{ onAddData: () => void }> = (props) => {
 
                     <label htmlFor="nameofthepatient" className="font-weight-bold"> Name of the Patient</label>
                     <select name="nameofthepatient" className="form-control" onChange={nameofthepatientChangeHandler}>
-                        {data.patients.map((patient: any) => (
+                        {data && data.patients && data.patients.map((patient: any) => (
                             <option key={patient.id} value={patient.patientname}>
                                 {patient.patientname}
                             </option>
@@ -134,7 +140,7 @@ const AddAdministerPatient: React.FC<{ onAddData: () => void }> = (props) => {
 
                     <label htmlFor="dateofbirth" className="font-weight-bold">Date of Birth</label>
                     <select name="dateofbirth" className="form-control" onChange={dateofbirthChangeHandler}>
-                        {data.patients.map((patient: any) => (
+                        {data && data.patients && data.patients.map((patient: any) => (
                             <option key={patient.id} value={patient.dateofbirth}>
                                 {patient.dateofbirth}
                             </option>

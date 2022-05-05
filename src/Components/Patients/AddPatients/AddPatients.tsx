@@ -134,7 +134,7 @@ const AddPatient: React.FC<{ onAddData: () => void }> = (props) => {
 
   const history = useHistory();
 
-  if (error) return <h4> Something went wrong </h4>;
+  if (error) return <h4> {error?.message} </h4>;
   // if(loading) return <h4> Loading... </h4>
 
   return (
