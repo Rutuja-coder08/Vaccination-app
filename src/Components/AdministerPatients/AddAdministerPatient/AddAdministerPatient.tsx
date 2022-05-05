@@ -91,7 +91,7 @@ const AddAdministerPatient: React.FC<{ onAddData: () => void }> = (props) => {
         setAdministerPatientState({ ...administerPatientState, dateofbirth: event.target.value })
     }
 
-    const vaccinationChangeHandler: React.ChangeEventHandler<HTMLInputElement> = event => {
+    const vaccinationChangeHandler: React.ChangeEventHandler<HTMLSelectElement> = event => {
         setAdministerPatientState({ ...administerPatientState, vaccination: event.target.value })
     }
 
@@ -118,15 +118,17 @@ const AddAdministerPatient: React.FC<{ onAddData: () => void }> = (props) => {
     // }
 
     return (
-        <div className="row">
+        <div className="container">
+             <div className="col-12">
+      <h3 className="text-center rounded border border-secondary text-light bg-dark"> Administer Vaccination</h3>
+      </div>
+      <hr></hr>
             <div className="col-12 card">
-                <div className="card-header" >
-                    <h2 className="text-center"> Administer Vaccination for Patients </h2>
-                </div>
                 <form>
 
-                    <label htmlFor="nameofthepatient" className="font-weight-bold"> Name of the Patient</label>
+                    <label htmlFor="nameofthepatient" className="font-weight-bold"> * Name of the Patient</label>
                     <select name="nameofthepatient" className="form-control" onChange={nameofthepatientChangeHandler}>
+                    <option value="">Select Patient Name</option>
                         {data && data.patients && data.patients.map((patient: any) => (
                             <option key={patient.id} value={patient.patientname}>
                                 {patient.patientname}
@@ -135,8 +137,9 @@ const AddAdministerPatient: React.FC<{ onAddData: () => void }> = (props) => {
                     </select>
 
 
-                    <label htmlFor="dateofbirth" className="font-weight-bold">Date of Birth</label>
+                    <label htmlFor="dateofbirth" className="font-weight-bold"> * Date of Birth</label>
                     <select name="dateofbirth" className="form-control" onChange={dateofbirthChangeHandler}>
+                    <option value="">Select DOB</option>
                         {data && data.patients && data.patients.map((patient: any) => (
                             <option key={patient.id} value={patient.dateofbirth}>
                                 {patient.dateofbirth}
@@ -145,12 +148,14 @@ const AddAdministerPatient: React.FC<{ onAddData: () => void }> = (props) => {
                     </select>
 
                     <label htmlFor="vaccination" className="font-weight-bold">Vaccination</label>
-                    <input type="text" name="vaccination" className="form-control" value={administerPatientState.vaccination} onChange={vaccinationChangeHandler} />
+                    {/* <input type="text" name="vaccination" className="form-control" value={administerPatientState.vaccination} onChange={vaccinationChangeHandler} /> */}
 
-                    {/* <select name="vaccination" className="form-control" onChange = { () => vaccinationChangeHandler}>         
-                        <option value="1stdose">1st Dose</option>
-                        <option value="2nddose">2nd Dose</option>
-                    </select> */}
+                    <select name="vaccination" className="form-control" onChange = {vaccinationChangeHandler}> 
+                    <option value="">Select Dose</option>
+                        <option value="1st dose">1st Dose</option>
+                        <option value="2nd dose">2nd Dose</option>
+                        <option value="Booster Dose">Booster Dose</option>
+                    </select>
 
                     <label htmlFor="dateadministered" className="font-weight-bold">Date Administered</label>
                     <input type="date" name="dateadministered" className="form-control" value={administerPatientState.dateadministered} max="2022-05-05" min="2020-01-01" onChange={dateadministeredChangeHandler} />
@@ -162,8 +167,8 @@ const AddAdministerPatient: React.FC<{ onAddData: () => void }> = (props) => {
                     <input type="text" name="givenat" className="form-control" value={administerPatientState.givenat} onChange={givenatChangeHandler} />
 
                     <br />
-                    <button className="btn btn-success" onClick={createAdministerPatientHandler}>Administer Patient</button>
-                    <button className="btn btn-danger offset-1" onClick={() => history.push('/')} >Cancel</button>
+                    <button className="btn bg-dark text-white" onClick={createAdministerPatientHandler}>Administer Patient</button>
+                    <button className="btn bg-dark text-white offset-1" onClick={() => history.push('/')} >Cancel</button>
 
                 </form>
 

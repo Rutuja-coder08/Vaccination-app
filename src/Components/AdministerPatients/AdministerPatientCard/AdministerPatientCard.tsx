@@ -25,8 +25,8 @@ const AdministerPatientCard = () => {
         { data && data.administerPatients && data.administerPatients.map((administerPatient: any) => (
           <Card className="col-md-4 card" style={{ border: "1px black solid" }}>
             <Card.Header
-              className="text-center"
-              style={{ border: "1px black solid", margin: "5px", color:"Highlight"}}
+              className="text-center rounded border border-secondary text-light bg-dark"
+              style={{ border: "1px dark solid", margin: "5px"}}
             >
               Vaccination Card
             </Card.Header>

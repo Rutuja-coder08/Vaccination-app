@@ -139,16 +139,12 @@ const AddPatient: React.FC<{ onAddData: () => void }> = (props) => {
   // if(loading) return <h4> Loading... </h4>
 
   return (
-    <div className="row">
-      {/* <div className="col-12 card">
-            <h2 className="offset-3 card-header"> Add New Patients </h2>
-            <br/>
-            </div> */}
-
-      <div className="col-12 card">
-        <div className="card-header">
-          <h2 className="text-center"> Add New Patients </h2>
-        </div>
+    <div className="container">
+      <div className="col-12">
+      <h3 className="text-center rounded border border-secondary text-light bg-dark"> Add New Patients </h3>
+      </div>
+      <hr></hr>
+        <div className="col-12 card">
         <form>
           <label htmlFor="patientname" className="font-weight-bold">
             * Patient Name 
@@ -183,8 +179,10 @@ const AddPatient: React.FC<{ onAddData: () => void }> = (props) => {
             value={patientState.gender}
             onChange={genderChangeHandler}
           >
-            <option value="MALE">Male</option>
-            <option value="FEMALE">Female</option>
+            <option value="">Select One Option</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
           </select>
 
           <label htmlFor="placeofbirth" className="font-weight-bold">
@@ -209,6 +207,7 @@ const AddPatient: React.FC<{ onAddData: () => void }> = (props) => {
             value={patientState.bloodgroup}
             onChange={bloodgroupChangeHandler}
           >
+             <option value="">Select One Option</option>
             <option value="A+">A+</option>
             <option value="B+">B+</option>
             <option value="AB+">AB+</option>
@@ -243,16 +242,17 @@ const AddPatient: React.FC<{ onAddData: () => void }> = (props) => {
 
           <br />
 
-          <button className="btn btn-success" onClick={createPatientHandler}>
+          <button className="btn bg-dark text-white"  onClick={createPatientHandler}>
             Create New Patient
           </button>
           <button
-            className="btn btn-danger offset-1"
+            className="btn bg-dark text-white offset-1"
             onClick={() => history.push("/")}
           >
             Cancel
           </button>
         </form>
+        
         {Pdata && <p>Patient Created Successfully</p>}
       </div>
     </div>

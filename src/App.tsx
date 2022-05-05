@@ -21,7 +21,7 @@ function App() {
       <div className="container">
         <Header />
       </div>
-
+    <hr></hr>
     <div className="container">
     <Switch>
 
