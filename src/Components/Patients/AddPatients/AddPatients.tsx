@@ -242,11 +242,11 @@ const AddPatient: React.FC<{ onAddData: () => void }> = (props) => {
 
           <br />
 
-          <button className="btn bg-dark text-white"  onClick={createPatientHandler}>
+          <button className="btn btn-outline-dark"  onClick={createPatientHandler}>
             Create New Patient
           </button>
           <button
-            className="btn bg-dark text-white offset-1"
+            className="btn btn-outline-dark offset-1"
             onClick={() => history.push("/")}
           >
             Cancel

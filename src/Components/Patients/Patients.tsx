@@ -21,7 +21,7 @@ const Patients = () => {
     <div className="row">
         <div className="col-6 offset-3">
             <div className='text-center'>
-        <button className='btn btn-secondary' onClick={() => setShowForm(!showForm)}>
+        <button className='btn btn-outline-dark' onClick={() => setShowForm(!showForm)}>
             {showForm ? 'Close Form' : 'Add Form'}
         </button>
         </div>

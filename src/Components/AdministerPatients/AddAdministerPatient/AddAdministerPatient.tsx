@@ -167,8 +167,8 @@ const AddAdministerPatient: React.FC<{ onAddData: () => void }> = (props) => {
                     <input type="text" name="givenat" className="form-control" value={administerPatientState.givenat} onChange={givenatChangeHandler} />
 
                     <br />
-                    <button className="btn bg-dark text-white" onClick={createAdministerPatientHandler}>Administer Patient</button>
-                    <button className="btn bg-dark text-white offset-1" onClick={() => history.push('/')} >Cancel</button>
+                    <button className="btn btn-outline-dark" onClick={createAdministerPatientHandler}>Administer Patient</button>
+                    <button className="btn btn-outline-dark offset-1" onClick={() => history.push('/')} >Cancel</button>
 
                 </form>
 
