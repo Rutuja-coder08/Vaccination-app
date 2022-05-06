@@ -12,7 +12,7 @@ import HomePage from './Components/HomePage/HomePage';
 //   })
 
 const client = new ApolloClient({
-  uri : "http://localhost:9090/gq",
+  uri : "https://vaccination-node.herokuapp.com/gq",
   cache : new InMemoryCache()
 })
 function App() {

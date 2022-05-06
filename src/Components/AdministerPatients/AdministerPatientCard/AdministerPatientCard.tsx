@@ -31,30 +31,12 @@ const AdministerPatientCard = () => {
               Vaccination Card
             </Card.Header>
             <Card.Body>
-              <Card.Text className="mb-2 text-muted">
-                Name :{administerPatient.nameofthepatient}
-              </Card.Text>
-              <Card.Text className="mb-2 text-muted">
-                Date of Birth:
-                {administerPatient.dateofbirth}
-              </Card.Text>
-              <Card.Text>
-                Vaccination:
-                {administerPatient.vaccination}
-              </Card.Text>
-              <Card.Text>
-                Date Administstered:
-                {administerPatient.dateadministered}
-              </Card.Text>
-              <Card.Text>
-                Brand Name:
-                {administerPatient.brandname}
-              </Card.Text>
-              <Card.Text>
-                Given At:
-                {administerPatient.givenat}
-              </Card.Text>
-            </Card.Body>
+              <Card.Text>Name : {administerPatient.nameofthepatient}</Card.Text>
+              <Card.Text>Date of Birth : {administerPatient.dateofbirth}</Card.Text>
+              <Card.Text>Vaccination : {administerPatient.vaccination}</Card.Text>
+              <Card.Text>Date Administstered : {administerPatient.dateadministered}</Card.Text>
+              <Card.Text>Brand Name : {administerPatient.brandname}</Card.Text>
+              <Card.Text>Given At : {administerPatient.givenat}</Card.Text></Card.Body>
           </Card>
         ))}
       </div>
