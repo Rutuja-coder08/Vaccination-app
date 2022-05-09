@@ -9,6 +9,7 @@ query{
     }
 }
 `
+
 const CREATE_ADMINISTER_PATIENT_MUTATION = gql`
 mutation onCreateAdministerPatientMutation (
      $nameofthepatient: String!
@@ -62,6 +63,8 @@ const AddAdministerPatient: React.FC<{ onAddData: () => void }> = (props) => {
         }
     })
 
+
+    
     const createAdministerPatientHandler = (event: React.FormEvent) => {
         event.preventDefault()
         createAdministerPatientCallback({
@@ -82,7 +85,9 @@ const AddAdministerPatient: React.FC<{ onAddData: () => void }> = (props) => {
           });
          
     }
+  
 
+    
     const nameofthepatientChangeHandler: React.ChangeEventHandler<HTMLSelectElement> = event => {
         setAdministerPatientState({ ...administerPatientState, nameofthepatient: event.target.value })
     }
@@ -109,6 +114,9 @@ const AddAdministerPatient: React.FC<{ onAddData: () => void }> = (props) => {
 
     const history = useHistory()
     const { data } = useQuery(FETCH_PATIENT)
+
+    
+    
 
     if (error) return <h4> Something went wrong </h4>
     // if(loading) return <h4> Loading... </h4>
